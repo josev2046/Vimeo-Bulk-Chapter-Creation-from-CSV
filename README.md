@@ -37,7 +37,7 @@ The script works as follows:
 
 * **Vimeo Access Token:** You must replace "YOUR_VIMEO_ACCESS_TOKEN" with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including edit and video_files).
 * **CSV File Path:** Make sure the `csv_file_path` variable is set to the correct location of your CSV file.
-* **CSV Data:** For the sake of simplicity, my data was modelled thus:
+* **CSV Data:** For the sake of simplicity, my data was modeled as it shows in Table 1:
 
 | video_filename | title       | description        | tags | chapter_timecode_1 | chapter_title_1 | chapter_timecode_2 | chapter_title_2 | chapter_timecode_3 | chapter_title_3 |
 |----------------|-------------|--------------------|------|--------------------|-----------------|--------------------|-----------------|--------------------|-----------------|
@@ -46,7 +46,7 @@ The script works as follows:
 | 1070971073     | Video Three | This is video three | tag3 | 15               | V3_Chapter 1    | 80               | V3_Chapter 2    | 155               | V3_Chapter 3    |
 | 1070971099     | Video Four  | This is video four | tag4 | 40               | V4_Chapter 1    | 100              | V4_Chapter 2    | 175               | V4_Chapter 3    |
 | 1070971107     | Video Five  | This is video five  | tag5 | 25               | V5_Chapter 1    | 105              | V5_Chapter 2    | 165               | V5_Chapter 3    |
-
+Table 1. Modeled CSV data
 * **Dependencies:** The script requires the `requests`, `csv`, and `certifi` Python libraries. You can install them using pip: `pip install requests certifi`
 * **SSL Verification:** The `verify=False` in the `add_chapters` function is for testing purposes only. It disables SSL certificate verification, which is insecure. You should replace this with proper SSL certificate handling (e.g., using a certificate bundle) in a production environment. See the certificate handling section at the beginning of the script.
 * **Error Handling:** Pay close attention to the script's output for any error messages.
