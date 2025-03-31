@@ -22,7 +22,7 @@ This script automates the process of adding chapters to multiple Vimeo videos ba
 The script works as follows:
 
 1.  **Certificate handling, where needed:** It attempts to find a valid SSL certificate bundle on the system. This is often necessary in environments with proxy servers or firewalls that intercept SSL traffic.
-2.  **CSV processing. The script does the following CSV processing:**
+2.  **CSV processing.** The script does the following CSV processing:
     * It opens and reads the provided CSV file.
     * For each row in the CSV:
         * It extracts the `video_filename` column, which is assumed to contain the Vimeo video ID.
