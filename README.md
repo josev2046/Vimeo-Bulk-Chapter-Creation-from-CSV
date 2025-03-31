@@ -12,6 +12,9 @@ This INTERNAL method adds every chapter to the specified video and overwrites an
 ## Description
 This script automates the process of adding chapters to multiple Vimeo videos based on data stored in a CSV file. It reads video IDs and chapter information from the CSV, then uses the Vimeo API to create chapters for each video.
 
+![image](https://github.com/user-attachments/assets/9890393d-dfac-40c0-bf12-eb3c17951b3a)
+
+
 CSV Data Format
 The script expects a CSV file with the following header structure:
 
