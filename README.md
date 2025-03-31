@@ -35,7 +35,7 @@ The script works as follows:
 
 ## Important Notes
 
-* **Vimeo Access Token:** You **must** replace `"YOUR_VIMEO_ACCESS_TOKEN"` with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including `edit` and `video_files`).
+* **Vimeo Access Token:** You must replace "YOUR_VIMEO_ACCESS_TOKEN" with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including edit and video_files).
 * **CSV File Path:** Make sure the `csv_file_path` variable is set to the correct location of your CSV file.
 * **CSV Data:** For the sake of simplicity, my data was modelled thus:
 
