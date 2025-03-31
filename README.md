@@ -2,20 +2,14 @@
 
 This project provides a Python script to automate the process of adding chapters to Vimeo videos in bulk, using data from a CSV file.
 
-## Inspiration
+## About
 
-This work is inspired by the Vimeo API method for adding chapters in batch:
-
->   This INTERNAL method adds every chapter to the specified video and overwrites any existing chapters. Include the chapters as a JSON array as the body of the request with the title and timecode fields, like this: `[{ "title": "Chapter 1", "timecode": 2}, {"title": "Chapter 2", "timecode": 23 }]`. The authenticated user must have edit access to the video.
+This INTERNAL method adds every chapter to the specified video and overwrites any existing chapters. Include the chapters as a JSON array as the body of the request with the title and timecode fields, like this: `[{ "title": "Chapter 1", "timecode": 2}, {"title": "Chapter 2", "timecode": 23 }]`. The authenticated user must have edit access to the video.
 >
 >   This method requires a token with the upload and edit and delete scopes and an app with the capability CAPABILITY_BULK_CHAPTER_MODIFICATION.
 
-curl -X PUT \
-  -H "Authorization: Bearer {TOKEN}" \
-  -H "Content-Type: application/json" \
-  -d '[    {      "title": "Chapter 1",      "timecode": 2    },    {      "title": "Chapter 2",      "timecode": 23    }  ]' \
-  "https://api.vimeo.com/videos/{ID}/chapters/batch"
-Description
+
+## Description
 This script automates the process of adding chapters to multiple Vimeo videos based on data stored in a CSV file. It reads video IDs and chapter information from the CSV, then uses the Vimeo API to create chapters for each video.
 
 CSV Data Format
