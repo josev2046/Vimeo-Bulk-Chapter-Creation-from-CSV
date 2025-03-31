@@ -4,7 +4,7 @@ This prototype provides a Python script to automate the process of adding chapte
 
 ## About
 
-This INTERNAL method adds every chapter to the specified video and overwrites any existing chapters. Include the chapters as a JSON array as the body of the request with the title and timecode fields, like this: `[{ "title": "Chapter 1", "timecode": 2}, {"title": "Chapter 2", "timecode": 23 }]`. The authenticated user must have edit access to the video.
+This INTERNAL Vimeo Enterprise method adds every chapter to the specified video and overwrites any existing chapters. Include the chapters as a JSON array as the body of the request with the title and timecode fields, like this: `[{ "title": "Chapter 1", "timecode": 2}, {"title": "Chapter 2", "timecode": 23 }]`. The authenticated user must have edit access to the video.
 >
 >   This method requires a token with the upload and edit and delete scopes and an app with the capability CAPABILITY_BULK_CHAPTER_MODIFICATION.
 
@@ -35,7 +35,7 @@ The script works as follows:
 
 * **Vimeo Access Token:** You **must** replace `"YOUR_VIMEO_ACCESS_TOKEN"` with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including `edit` and `video_files`).
 * **CSV File Path:** Make sure the `csv_file_path` variable is set to the correct location of your CSV file.
-* **CSV Data:** For the sake of this simplicity, my data was modelled thus:
+* **CSV Data:** For the sake of simplicity, my data was modelled thus:
 
 | video_filename | title       | description        | tags | chapter_timecode_1 | chapter_title_1 | chapter_timecode_2 | chapter_title_2 | chapter_timecode_3 | chapter_title_3 |
 |----------------|-------------|--------------------|------|--------------------|-----------------|--------------------|-----------------|--------------------|-----------------|
