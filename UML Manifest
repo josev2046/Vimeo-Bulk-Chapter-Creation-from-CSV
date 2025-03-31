@@ -1,0 +1,33 @@
+@startuml
+
+
+participant PythonScript as PS
+participant CSVLibrary as CSV
+participant VimeoAPI as VAPI
+
+
+
+PS -> CSV: Open and read CSV file
+activate CSV
+CSV --> PS: CSV data (rows)
+deactivate CSV
+
+PS -> PS: Iterate through CSV rows
+loop For each row
+    PS -> PS: Extract video_filename (video_id)
+    alt video_filename is valid
+        PS -> PS: Extract chapter data (timecode, title)
+        PS -> PS: Prepare chapter data for Vimeo API
+        PS -> VAPI: PUT /videos/{video_id}/chapters/batch (with chapter data)
+        activate VAPI
+        VAPI --> PS: HTTP Response (Status Code, Body)
+        deactivate VAPI
+        PS -> PS: Handle API response (success/error)
+    else video_filename is invalid
+        PS -> PS: Log/Print error message (invalid video ID)
+    end
+end
+
+
+
+@enduml
