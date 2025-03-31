@@ -21,8 +21,8 @@ This script automates the process of adding chapters to multiple Vimeo videos ba
 
 The script works as follows:
 
-1.  **Certificate handling, where needed:** It attempts to find a valid SSL certificate bundle on the system. This is often necessary in environments with proxy servers or firewalls that intercept SSL traffic.
-2.  **CSV processing.** The script does the following CSV processing:
+*.  **Certificate handling, where needed:** It attempts to find a valid SSL certificate bundle on the system. This is often necessary in environments with proxy servers or firewalls that intercept SSL traffic.
+*.  **CSV processing.** The script does the following CSV processing:
     * It opens and reads the provided CSV file.
     * For each row in the CSV:
         * It extracts the `video_filename` column, which is assumed to contain the Vimeo video ID.
@@ -30,8 +30,8 @@ The script works as follows:
         * It formats the chapter data into a JSON array suitable for the Vimeo API.
         * It makes an API call to Vimeo's `/videos/{video_id}/chapters/batch` endpoint to add the chapters to the specified video.
         * It handles potential errors during the API call (e.g., network issues, invalid API responses).
-3.  **Error handling:** The script includes error handling for file not found errors, invalid video IDs in the CSV, and API call failures.
-4.  **Proxy support:** It checks for proxy environment variables (`http_proxy`, `https_proxy`) and uses them if available. This is important for corporate or network environments that use proxies.
+*.  **Error handling:** The script includes error handling for file not found errors, invalid video IDs in the CSV, and API call failures.
+*.  **Proxy support:** It checks for proxy environment variables (`http_proxy`, `https_proxy`) and uses them if available. This is important for corporate or network environments that use proxies.
 
 ## Important Notes
 
