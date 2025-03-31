@@ -35,9 +35,9 @@ The script works as follows:
 
 ## Important Notes
 
-* **Vimeo Access Token:** You must replace "YOUR_VIMEO_ACCESS_TOKEN" with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including edit and video_files).
-* **CSV File Path:** Make sure the `csv_file_path` variable is set to the correct location of your CSV file.
-* **CSV Data:** For the sake of simplicity, my data was modeled as it shows in Table 1:
+* **Vimeo access token:** You must replace "YOUR_VIMEO_ACCESS_TOKEN" with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including edit and video_files).
+* **CSV file path:** Make sure the `csv_file_path` variable is set to the correct location of your CSV file.
+* **CSV data:** For the sake of simplicity, my data was modeled as it shows in Table 1:
 
 | video_filename | title       | description        | tags | chapter_timecode_1 | chapter_title_1 | chapter_timecode_2 | chapter_title_2 | chapter_timecode_3 | chapter_title_3 |
 |----------------|-------------|--------------------|------|--------------------|-----------------|--------------------|-----------------|--------------------|-----------------|
@@ -49,5 +49,5 @@ The script works as follows:
 
 Table 1. Modeled CSV data
 * **Dependencies:** The script requires the `requests`, `csv`, and `certifi` Python libraries. You can install them using pip: `pip install requests certifi`
-* **SSL Verification:** The `verify=False` in the `add_chapters` function is for testing purposes only. It disables SSL certificate verification, which is insecure. You should replace this with proper SSL certificate handling (e.g., using a certificate bundle) in a production environment. See the certificate handling section at the beginning of the script.
-* **Error Handling:** Pay close attention to the script's output for any error messages.
+* **SSL verification:** The `verify=False` in the `add_chapters` function is for testing purposes only. It disables SSL certificate verification, which is insecure. You should replace this with proper SSL certificate handling (e.g., using a certificate bundle) in a production environment. See the certificate handling section at the beginning of the script.
+* **Error handling:** Pay close attention to the script's output for any error messages.
