@@ -15,22 +15,26 @@ This script automates the process of adding chapters to multiple Vimeo videos ba
 ![image](https://github.com/user-attachments/assets/9890393d-dfac-40c0-bf12-eb3c17951b3a)
 
 
+## Logic Flow
+
 The script works as follows:
 
-Certificate Handling (Potentially): It attempts to find a valid SSL certificate bundle on the system. This is often necessary in environments with proxy servers or firewalls that intercept SSL traffic.
-CSV Processing:
-It opens and reads the provided CSV file.
-For each row in the CSV:
-It extracts the video_filename column, which is assumed to contain the Vimeo video ID.
-It extracts chapter timecodes and titles from the chapter_timecode_1, chapter_title_1, etc., columns.
-It formats the chapter data into a JSON array suitable for the Vimeo API.
-It makes an API call to Vimeo's /videos/{video_id}/chapters/batch endpoint to add the chapters to the specified video.
-It handles potential errors during the API call (e.g., network issues, invalid API responses).
-Error Handling: The script includes error handling for file not found errors, invalid video IDs in the CSV, and API call failures.
-Proxy Support: It checks for proxy environment variables (http_proxy, https_proxy) and uses them if available. This is important for corporate or network environments that use proxies.
-Important Notes
-Vimeo Access Token: You must replace "YOUR_VIMEO_ACCESS_TOKEN" with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including edit and video_files).
-CSV File Path: Make sure the csv_file_path variable is set to the correct location of your CSV file.
-Dependencies: The script requires the requests, csv, and certifi Python libraries. You can install them using pip: pip install requests certifi
-SSL Verification: The verify=False in the add_chapters function is for testing purposes only. It disables SSL certificate verification, which is insecure. You should replace this with proper SSL certificate handling (e.g., using a certificate bundle) in a production environment. See the certificate handling section at the beginning of the script.
-Error Handling: Pay close attention to the script's output for any error messages.
+1.  **Certificate Handling (Potentially):** It attempts to find a valid SSL certificate bundle on the system. This is often necessary in environments with proxy servers or firewalls that intercept SSL traffic.
+2.  **CSV Processing:**
+    * It opens and reads the provided CSV file.
+    * For each row in the CSV:
+        * It extracts the `video_filename` column, which is assumed to contain the Vimeo video ID.
+        * It extracts chapter timecodes and titles from the `chapter_timecode_1`, `chapter_title_1`, etc., columns.
+        * It formats the chapter data into a JSON array suitable for the Vimeo API.
+        * It makes an API call to Vimeo's `/videos/{video_id}/chapters/batch` endpoint to add the chapters to the specified video.
+        * It handles potential errors during the API call (e.g., network issues, invalid API responses).
+3.  **Error Handling:** The script includes error handling for file not found errors, invalid video IDs in the CSV, and API call failures.
+4.  **Proxy Support:** It checks for proxy environment variables (`http_proxy`, `https_proxy`) and uses them if available. This is important for corporate or network environments that use proxies.
+
+## Important Notes
+
+* **Vimeo Access Token:** You **must** replace `"YOUR_VIMEO_ACCESS_TOKEN"` with your actual Vimeo API access token. Ensure that your token has the necessary scopes (likely including `edit` and `video_files`).
+* **CSV File Path:** Make sure the `csv_file_path` variable is set to the correct location of your CSV file.
+* **Dependencies:** The script requires the `requests`, `csv`, and `certifi` Python libraries. You can install them using pip: `pip install requests certifi`
+* **SSL Verification:** The `verify=False` in the `add_chapters` function is for testing purposes only. It disables SSL certificate verification, which is insecure. You should replace this with proper SSL certificate handling (e.g., using a certificate bundle) in a production environment. See the certificate handling section at the beginning of the script.
+* **Error Handling:** Pay close attention to the script's output for any error messages.
