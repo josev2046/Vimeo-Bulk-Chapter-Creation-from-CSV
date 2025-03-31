@@ -1,6 +1,6 @@
 # Vimeo Bulk Chapter Creation from CSV
 
-This project provides a Python script to automate the process of adding chapters to Vimeo videos in bulk, using data from a CSV file.
+This prototype provides a Python script to automate the process of adding chapters to Vimeo videos in bulk, using data from a CSV file.
 
 ## About
 
